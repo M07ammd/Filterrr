@@ -1,0 +1,670 @@
+body {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+:root {
+    --color-primary: #198754;
+    --ligt-container: #f8f9fa;
+}
+
+.number-input .form-control {
+    max-width: 40px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+}
+
+.final {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add a separator line */
+.separator {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+/* primary btn */
+.btn {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.btn-green {
+    background-color: #0f6838;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    min-width: 100px;
+}
+
+.btn-success:hover {
+    background-color: #0f5132;
+}
+
+.btn-green:hover {
+    background-color: #157347;
+    transform: translateY(-2px);
+}
+
+.btn-green {
+    background-color: #0f6838;
+    color: white;
+}
+
+/* --------second btn------------------ */
+
+.btn-outline-secondary {
+    border: 1px solid #ccc;
+    color: #333;
+    width: 100px;
+}
+
+.btn-outline-secondary:hover {
+    background: #0f5132;
+}
+.btn-group{
+    display: flex;
+    gap: 2rem;
+    font-size: 15px;
+}
+
+.btn-group .btn.active,
+.btn-group .btn:hover {
+    background-color: #0f6838;
+    color: white;
+    border: 1px solid #0f6838;
+}
+
+
+.section {
+    margin-top: 100px;
+}
+
+/* header */
+.navbar .nav-link {
+    font-size: 16px;
+    margin-right: 20px;
+    text-transform: capitalize;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+    color: #198754 !important;
+    text-decoration: underline;
+}
+
+.navbar .d-flex i:hover {
+    color: #198754;
+}
+
+
+.position-relative {
+    position: relative;
+}
+
+/* side left */
+
+/* Search*/
+
+
+.search-bar button {
+    padding: 8px;
+    background-color: transparent;
+    border: none;
+}
+
+/* side right */
+
+.property-card {
+    padding: 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+
+.property-card img {
+    border-radius: 10px 10px 0 0;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.property-card .fa-heart {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    color: #fff;
+    /* background: rgba(0, 0, 0, 0.4); */
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* .property-card .fa-heart:hover {
+    background: rgba(0, 0, 0, 0.6);
+} */
+
+
+
+/* .property-card {
+    border: none;
+    box-shadow: none;
+} */
+
+
+
+.text-success {
+    color: #198754 !important;
+    font-weight: bold;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #50494941;
+    margin-bottom: 2rem;
+}
+
+.price {
+    font-size: 16px;
+    color: #198754;
+}
+
+/* ----------------side left------------------------------------- */
+.side-left {
+    margin-top: 150px;
+}
+
+/*----------------------- filter --------------------------*/
+
+.custom-dropdown {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: border 0.3s ease-in-out;
+}
+
+.custom-dropdown:hover {
+    border-color: #198754;
+}
+
+input[type="date"],
+.price-input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 100%;
+    transition: border 0.3s ease-in-out;
+}
+
+input[type="date"]:focus,
+.price-input:focus {
+    border-color: #198754;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(25, 135, 84, 0.3);
+}
+
+.dropdown-icon {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #666;
+    pointer-events: none;
+}
+
+.filter-box h6 {
+    font-weight: bold;
+}
+
+
+.filter-box {
+    background-color: #f8f9fa;
+    border-radius: 1rem;
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.filter-box:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Container side left */
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+/* Green Progress Track */
+/* .slider-container .slider-track {
+    position: absolute;
+    height: 10px;
+    background: #137c55;
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+} */
+
+/* Hide Default Range Sliders */
+
+/* .slider-container input[type="range"] {
+    position: absolute;
+    width: 100%;
+    appearance: none;
+    background: none;
+    pointer-events: none;
+    z-index: 2;
+} */
+
+/* Custom Slider Thumb */
+/* .slider-container input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 3px solid #137c55;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 3;
+} */
+
+/* .slider-container input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 3px solid #137c55;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 3;
+} */
+
+
+/*------------------- price-----------------------------*/
+.price-input {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.price-field span {
+    font-size: 17px;
+}
+
+.price-field input {
+    height: 35px;
+    width: 80%;
+    font-size: 15px;
+    border-radius: 9px;
+    text-align: center;
+    border: 1px solid rgb(196, 195, 195);
+}
+
+.price-input {
+    display: flex;
+    border: none;
+    color: #555;
+}
+
+/* number input */
+.number-input .btn {
+    width: 30px;
+    /* Make buttons smaller */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 14px;
+}
+
+
+
+
+
+.form-check-input {
+    width: 2.5rem;
+    height: 1.3rem;
+    background-color: #ddd;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.form-check-input:checked {
+    background-color: #146c43;
+    border-color: #146c43;
+}
+
+
+input[type="date"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+
+
+
+
+
+.calendar-box {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 15px;
+}
+
+.flatpickr-calendar {
+    width: 100% !important;
+    border: none;
+    box-shadow: none;
+}
+
+/* Change selected date circle to green */
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+    background: #198754 !important;
+    border-color: #198754 !important;
+    color: white !important;
+}
+
+
+
+.mb-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+d-flex.align-items-center.gap-2 {
+    gap: 5px;
+    /* Reduce spacing */
+}
+
+.d-flex.justify-content-between {
+    width: 100%;
+}
+
+.number-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    /* margin-right: 10px; */
+}
+
+
+/* Footer */
+.footer {
+    background-color: #1a5d3e;
+    color: white;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-logo .logo {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.footer-links h4,
+.footer-subscribe h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Subscribe Section */
+.email-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.email-box input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+}
+
+.email-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.email-box button {
+    background: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.email-box button i {
+    color: #1a5d3e;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+.payment-icons img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background: #ddd;
+    color: #333;
+    font-size: 18px;
+    margin: 0 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Facebook Hover */
+.social-icons a:nth-child(1):hover {
+    background: #1877F2;
+    color: white;
+}
+
+/* Instagram Hover */
+.social-icons a:nth-child(2):hover {
+    background: linear-gradient(45deg, #ff7a00, #ff0050, #d600ff);
+    color: white;
+}
+
+/* Twitter Hover */
+.social-icons a:nth-child(3):hover {
+    background: #1DA1F2;
+    color: white;
+}
+
+
+
+
+
+/* Remove Arrows/Spinners */
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+} */
+
+
+/* ---------range ------------------ */
+
+.slider-container {
+    height: 6px;
+    width: 100%;
+    position: relative;
+    background: #e4e4e4;
+    border-radius: 5px;
+}
+
+.slider-container .price-slider {
+    height: 100%;
+    left: 25%;
+    right: 15%;
+    position: absolute;
+    border-radius: 5px;
+    background: #0F7757;
+}
+
+.range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: none;
+    top: -5px;
+    pointer-events: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+
+/* Styles for the range thumb in WebKit browsers */
+
+input[type="range"]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 70%;
+    background: #ffffff;
+    border: 5px solid #0F7757;
+    pointer-events: auto;
+    -webkit-appearance: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .property-card {
+        text-align: center;
+    }
+
+    .icons {
+        justify-content: center;
+    }
+
+    .price-button {
+        justify-content: center;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .main {
+        width: 80%;
+        margin-right: 5px;
+    }
+
+    .custom-wrapper {
+        width: 100%;
+        left: 0;
+        padding: 0 10px;
+    }
+
+    .projtitle {
+        width: 100%;
+        position: relative;
+        right: 26px;
+    }
+
+    /* .price-input {
+        flex-direction: column;
+        align-items: center;
+    } */
+
+    .price-field {
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .side-left {
+        margin-top: 20px;
+    }
+
+    .footer {
+        text-align: center;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+        margin: 5px;
+    }
+}

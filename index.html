@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rental Listings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="filter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar position-fixed w-100 top-0 start-0 bg-white z-2 navbar-expand-lg pt-3">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="Images/Frame logo.png" alt="Logo" width="150px">
+                </a>
+
+                <!-- Toggle Button for Mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Property</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="#">Advertise</a></li>
+                    </ul>
+
+                    <!-- Right Section: Language, Heart, Profile -->
+                    <div class="d-flex align-items-center">
+                        <span class="me-3 text-dark">English</span>
+                        <i class="far fa-heart me-3" style="font-size: 20px;"></i>
+                        <i class="fas fa-user-circle" style="font-size: 22px;"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="container section">
+        <div class="row gx-5">
+            <!-- side left -->
+            <div class="side-left col-md-5">
+
+                <!-- dropdown -->
+
+                <div class="dropdown position-relative mb-4">
+                    <input type="text" class="form-control custom-dropdown" placeholder="Choose Place" readonly
+                        data-bs-toggle="dropdown" style="border:1px solid #0F7757;">
+                    <i class="bi bi-chevron-down dropdown-icon position-absolute"></i>
+                    <ul class="dropdown-menu w-100">
+                        <li><a class="dropdown-item" href="#">New York</a></li>
+                        <li><a class="dropdown-item" href="#">London</a></li>
+                        <li><a class="dropdown-item" href="#">Paris</a></li>
+                        <li><a class="dropdown-item" href="#">Tokyo</a></li>
+                    </ul>
+                </div>
+
+                <div class="filter-box p-3">
+                    <!-- Choose Place Input -->
+
+                    <div style=" background-color: #f8f9fa;">
+                        <!-- Rental Period -->
+                        <div class="rental-period" style="margin-top: 25px;">
+                            <h6>Rental Period</h6>
+                            <div class="btn-group">
+                                <button class="btn active">Monthly</button>
+                                <button class="btn btn-outline-secondary ">Daily</button>
+                            </div>
+                        </div>
+
+                        <div class="separator"></div>
+
+                        <!-- Price Range Section -->
+
+                        <div class="price-slide">
+                            <h6 class="mt-3">Price Range</h6>
+
+                            <!-- Slider -->
+
+                            <div class="slider-container">
+                                <div class="price-slider">
+                                </div>
+                            </div>
+
+                            <div class="range-input position-relative">
+                                <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
+                                <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
+                            </div>
+                            <div class="price-input-container mt-3">
+                                <div class="price-input">
+                                    <div class="price-field">
+                                        <span>price from</span>
+                                        <input type="number" class="min-input" value="2500">
+                                    </div>
+                                    <div class="price-field">
+                                        <span>price to</span>
+                                        <input type="number" class="max-input" value="8500">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="separator"></div>
+
+
+                        <!-- input number 3 -->
+
+                        <div class="mb-3 d-flex justify-content-between align-items-center number-input">
+                            <label class="form-label mb-0">Rooms</label>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn btn-outline-secondary decrement rounded-circle fw-bold"
+                                    type="button">−</button>
+                                <input type="text" class="form-control text-center" value="1" readonly>
+                                <button class="btn btn-outline-secondary increment rounded-circle fw-bold"
+                                    type="button">+</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-between align-items-center number-input">
+                            <label class="form-label mb-0">Bathrooms</label>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn btn-outline-secondary decrement rounded-circle fw-bold"
+                                    type="button">−</button>
+                                <input type="text" class="form-control text-center" value="1" readonly>
+                                <button class="btn btn-outline-secondary increment rounded-circle fw-bold"
+                                    type="button">+</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-between align-items-center number-input">
+                            <label class="form-label mb-0">Floor</label>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn btn-outline-secondary decrement rounded-circle fw-bold"
+                                    type="button">−</button>
+                                <input type="text" class="form-control text-center" value="1" readonly>
+                                <button class="btn btn-outline-secondary increment rounded-circle fw-bold"
+                                    type="button">+</button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-between align-items-center number-input">
+                            <label class="form-label mb-0">Rating</label>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="btn btn-outline-secondary decrement rounded-circle fw-bold"
+                                    type="button">−</button>
+                                <input type="text" class="form-control text-center" value="1" readonly>
+                                <button class="btn btn-outline-secondary increment rounded-circle fw-bold"
+                                    type="button">+</button>
+                            </div>
+                        </div>
+
+
+                        <div class="separator"></div>
+
+                        <!-- Furnished Section -->
+
+                        <h6>Furnished</h6>
+
+                        <div class="btn-group w-100 gap-3 ">
+                            <button class="btn btn-outline-secondary active">Unfurnished</button>
+                            <button class="btn btn-outline-secondary">Partially furnished</button>
+                            <button class="btn btn-outline-secondary">Furnished</button>
+                        </div>
+
+                        <div class="separator"></div>
+
+                        <!-- Additional Services Section -->
+
+                        <h6 class="my-3">Additional Services</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn  btn-success active">All</button>
+                            <button class="btn  btn-outline-secondary">Balcony</button>
+                            <button class="btn  btn-outline-secondary">Wi-Fi</button>
+                            <button class="btn  btn-outline-secondary">Garage</button>
+                            <button class="btn  btn-outline-secondary">Security</button>
+                            <button class="btn  btn-outline-secondary">Central heating</button>
+                            <button class="btn  btn-outline-secondary">Elevator</button>
+                        </div>
+
+                        <div class="separator"></div>
+
+                        <!-- Pets Allowed Section -->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">Pets allowed</h6>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="petsAllowed" checked>
+                            </div>
+                        </div>
+
+                        <div class="separator"></div>
+
+                        <!-- Booking Period Section -->
+                        <h6 class="my-3">Booking Period</h6>
+                        <div class="final">
+                            <div class="calendar-box p-3 bg-white rounded shadow">
+                                <input type="text" id="bookingCalendar" class="form-control d-none">
+                                <div id="calendarContainer">
+
+                                </div>
+                            </div>
+
+
+                            <!-- Available Apartment Button -->
+                            <button class=" btn-green w-75 mt-3 ">Available
+                                apartment</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- side right -->
+            <div class="col-md-7">
+                <!-- search -->
+                <div class="search-section mb-4 d-flex" style=" margin-top: 20px; width: 400px">
+                    <div class="search-bar d-flex align-items-center border px-3 py-2  "
+                        style="max-width: 500px; background-color: white; width: 100%; border-radius: 10px;">
+                        <input type="text" class="form-control border-0 shadow-none"
+                            placeholder="Enter an address, neighborhood, City" style="flex: 1; outline: none;">
+                        <button class="btn p-0"><i class="fas fa-search" style="font-size: 25px;"></i></button>
+                    </div>
+                </div>
+
+                <!-- cards -->
+
+                <div class="property-card p-3">
+                    <div class="row">
+                        <!-- Image Section -->
+                        <div class="col-md-6 position-relative">
+                            <img src="Images/image1.png" class="img-fluid w-100 rounded-3">
+                            <i class="far fa-heart" style="color: white;  font-size: 30px ;"></i>
+                        </div>
+
+                        <!-- Details Section -->
+                        <div class="col-md-6">
+                            <h5 class="fw-bold my-3">Residential Apartment</h5>
+                            <p class="text-success mb-4">
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <span class="text-muted">(5)</span>
+                            </p>
+                            <p class="small fw-bold mb-2">
+                                Suez Canal Street,Next to Al- <br> Mohamady Grill
+                            </p>
+                            <!-- Icons -->
+                            <div class="icons d-flex gap-3 small">
+                                <span><i class="fas fa-couch"></i> 3</span>
+                                <span><i class="fas fa-bed"></i> 5</span>
+                                <span><i class="fas fa-bath"></i> 2</span>
+                                <span><i class="fas fa-ruler-combined"></i> 150m²</span>
+                            </div>
+                            <!-- Price & Button -->
+                            <div class="price-button d-flex align-items-center" style="column-gap: 2rem;">
+                                <p class="price mb-0 fw-bold ">EGP 5,500</p>
+                                <button class="btn btn-green ">See More</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card p-3">
+                    <div class="row">
+                        <!-- Image Section -->
+                        <div class="col-md-6 position-relative">
+                            <img src="Images/image1.png" class="img-fluid w-100 rounded-3">
+                            <i class="far fa-heart" style="color: white;  font-size: 30px ;"></i>
+                        </div>
+
+                        <!-- Details Section -->
+                        <div class="col-md-6">
+                            <h5 class="fw-bold my-3">Residential Apartment</h5>
+                            <p class="text-success mb-4">
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <span class="text-muted">(5)</span>
+                            </p>
+                            <p class="small fw-bold mb-2">
+                                Suez Canal Street,Next to Al- <br> Mohamady Grill
+                            </p>
+                            <!-- Icons -->
+                            <div class="icons d-flex gap-3 small">
+                                <span><i class="fas fa-couch"></i> 3</span>
+                                <span><i class="fas fa-bed"></i> 5</span>
+                                <span><i class="fas fa-bath"></i> 2</span>
+                                <span><i class="fas fa-ruler-combined"></i> 150m²</span>
+                            </div>
+                            <!-- Price & Button -->
+                            <div class="price-button d-flex align-items-center" style="column-gap: 2rem;">
+                                <p class="price mb-0 fw-bold ">EGP 5,500</p>
+                                <button class="btn btn-green ">See More</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card p-3">
+                    <div class="row">
+                        <!-- Image Section -->
+                        <div class="col-md-6 position-relative">
+                            <img src="Images/image1.png" class="img-fluid w-100 rounded-3">
+                            <i class="far fa-heart" style="color: white;  font-size: 30px ;"></i>
+                        </div>
+
+                        <!-- Details Section -->
+                        <div class="col-md-6">
+                            <h5 class="fw-bold my-3">Residential Apartment</h5>
+                            <p class="text-success mb-4">
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <span class="text-muted">(5)</span>
+                            </p>
+                            <p class="small fw-bold mb-2">
+                                Suez Canal Street,Next to Al- <br> Mohamady Grill
+                            </p>
+                            <!-- Icons -->
+                            <div class="icons d-flex gap-3 small">
+                                <span><i class="fas fa-couch"></i> 3</span>
+                                <span><i class="fas fa-bed"></i> 5</span>
+                                <span><i class="fas fa-bath"></i> 2</span>
+                                <span><i class="fas fa-ruler-combined"></i> 150m²</span>
+                            </div>
+                            <!-- Price & Button -->
+                            <div class="price-button d-flex align-items-center" style="column-gap: 2rem;">
+                                <p class="price mb-0 fw-bold ">EGP 5,500</p>
+                                <button class="btn btn-green ">See More</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card p-3">
+                    <div class="row">
+                        <!-- Image Section -->
+                        <div class="col-md-6 position-relative">
+                            <img src="Images/image1.png" class="img-fluid w-100 rounded-3">
+                            <i class="far fa-heart" style="color: white;  font-size: 30px ;"></i>
+                        </div>
+
+                        <!-- Details Section -->
+                        <div class="col-md-6">
+                            <h5 class="fw-bold my-3">Residential Apartment</h5>
+                            <p class="text-success mb-4">
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <span class="text-muted">(5)</span>
+                            </p>
+                            <p class="small fw-bold mb-2">
+                                Suez Canal Street,Next to Al- <br> Mohamady Grill
+                            </p>
+                            <!-- Icons -->
+                            <div class="icons d-flex gap-3 small">
+                                <span><i class="fas fa-couch"></i> 3</span>
+                                <span><i class="fas fa-bed"></i> 5</span>
+                                <span><i class="fas fa-bath"></i> 2</span>
+                                <span><i class="fas fa-ruler-combined"></i> 150m²</span>
+                            </div>
+                            <!-- Price & Button -->
+                            <div class="price-button d-flex align-items-center" style="column-gap: 2rem;">
+                                <p class="price mb-0 fw-bold ">EGP 5,500</p>
+                                <button class="btn btn-green ">See More</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card p-3">
+                    <div class="row">
+                        <!-- Image Section -->
+                        <div class="col-md-6 position-relative">
+                            <img src="Images/image1.png" class="img-fluid w-100 rounded-3">
+                            <i class="far fa-heart" style="color: white;  font-size: 30px ;"></i>
+                        </div>
+
+                        <!-- Details Section -->
+                        <div class="col-md-6">
+                            <h5 class="fw-bold my-3">Residential Apartment</h5>
+                            <p class="text-success mb-4">
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <i class="fas fa-star" style="color:#0F7757;"></i>
+                                <span class="text-muted">(5)</span>
+                            </p>
+                            <p class="small fw-bold mb-2">
+                                Suez Canal Street,Next to Al- <br> Mohamady Grill
+                            </p>
+                            <!-- Icons -->
+                            <div class="icons d-flex gap-3 small">
+                                <span><i class="fas fa-couch"></i> 3</span>
+                                <span><i class="fas fa-bed"></i> 5</span>
+                                <span><i class="fas fa-bath"></i> 2</span>
+                                <span><i class="fas fa-ruler-combined"></i> 150m²</span>
+                            </div>
+                            <!-- Price & Button -->
+                            <div class="price-button d-flex align-items-center" style="column-gap: 2rem;">
+                                <p class="price mb-0 fw-bold ">EGP 5,500</p>
+                                <button class="btn btn-green ">See More</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Left Section (Logo & Contact) -->
+                <div class="col-md-4 footer-logo">
+                    <img src="Images/logo.png" alt="Peron Logo" class="logo">
+                    <p><i class="fas fa-phone-alt"></i> (704)555-01027</p>
+                    <p><i class="fas fa-envelope"></i> peron@gmail.com</p>
+                    <div class="payment-icons" style="margin-bottom: 30px;">
+                        <img src="Images/pay.png" alt="Google Pay">
+                        <img src="Images/pp.png" alt="PayPal">
+                        <img src="Images/visa.png" alt="Visa">
+                    </div>
+                </div>
+
+                <!-- Middle Sections (Links) -->
+                <div class="col-md-2 footer-links">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">My Cart</a></li>
+                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="#">Checkout</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2 footer-links">
+                    <h4>Service</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Condition</a></li>
+                    </ul>
+                </div>
+
+                <!-- Right Section (Subscribe) -->
+                <div class="col-md-4 footer-subscribe">
+                    <h4>Subscribe</h4>
+                    <p>Enter your email below to be the first to know about new collections and product launches.</p>
+                    <form action="#">
+                        <div class="email-box">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>2025 Peron All Rights are reserved</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            flatpickr("#bookingCalendar", {
+                inline: true,
+                defaultDate: "today",
+                appendTo: document.getElementById("calendarContainer"),
+                showMonths: 1,
+                dateFormat: "Y-m-d",
+            });
+        });
+    </script>
+
+
+
+    <!-- Bootstrap JS (For Dropdown & Other Components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
