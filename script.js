@@ -151,3 +151,13 @@ for (let i = 0; i < priceInputvalue.length; i++) {
         });
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    flatpickr("#bookingCalendar", {
+        inline: true,
+        defaultDate: "today",
+        appendTo: document.getElementById("calendarContainer"),
+        showMonths: 1,
+        dateFormat: "Y-m-d",
+    });
+});
